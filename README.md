@@ -1,9 +1,9 @@
 # Web安全学习笔记
 
-![](https://img.shields.io/github/stars/lylemi/learn-web-hacking.svg)
-![](https://img.shields.io/github/forks/lylemi/learn-web-hacking.svg)
-![](https://img.shields.io/github/issues/lylemi/learn-web-hacking.svg)
-![](https://img.shields.io/github/license/lylemi/learn-web-hacking.svg)
+![](https://img.shields.io/github/stars/elinpf/learn-web-hacking.svg)
+![](https://img.shields.io/github/forks/elinpf/learn-web-hacking.svg)
+![](https://img.shields.io/github/issues/elinpf/learn-web-hacking.svg)
+![](https://img.shields.io/github/license/elinpf/learn-web-hacking.svg)
 
 ### 序言
 ---
@@ -135,23 +135,17 @@
 ---
 
 ```bash
-git clone https://github.com/LyleMi/Learn-Web-Hacking.git
+git clone https://github.com/Elinpf/Learn-Web-Hacking.git
 cd Learn-Web-Hacking
 pip install sphinx sphinx-rtd-theme
 make html
 ```
 
-### Contribution
----
-
-如果有任何的问题、意见或者建议欢迎以Issue或PR的形式提出，不胜感激。
-
-感谢所有的[贡献者](https://github.com/LyleMi/Learn-Web-Hacking/graphs/contributors)。
 
 ### License
 ---
 
-项目以CC0 1.0许可证发布，可以点击[这里](https://github.com/LyleMi/Learn-Web-Hacking/blob/master/LICENSE)浏览全文。
+项目以CC0 1.0许可证发布，可以点击[这里](https://github.com/Elinpf/Learn-Web-Hacking/blob/master/LICENSE)浏览全文。
 
 ### 注
 ---

