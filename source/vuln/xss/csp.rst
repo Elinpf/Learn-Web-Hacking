@@ -5,6 +5,7 @@ CSP是什么？
 ----------------------------------------
 Content Security Policy，简称 CSP，译作内容安全策略。顾名思义，这个规范与内容安全有关，主要是用来定义哪些资源可以被当前页面加载，减少 XSS 的发生。
 
+
 配置
 ----------------------------------------
 CSP策略可以通过 HTTP 头信息或者 meta 元素定义。
@@ -24,9 +25,9 @@ CSP 有三类：
 
 HTTP Content-Security-Policy 头可以指定一个或多个资源是安全的，而Content-Security-Policy-Report-Only则是允许服务器检查（非强制）一个策略。多个头的策略定义由优先采用最先定义的。
 
-HTML Meta :
 ::
 
+    HTML Meta :
     <meta http-equiv="content-security-policy" content="策略">
     <meta http-equiv="content-security-policy-report-only" content="策略">
 
