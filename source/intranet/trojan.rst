@@ -22,6 +22,9 @@
         - 基于ActiveX控件的自启动
         - 基于计划任务（Scheduled Tasks）的自启动
     - Linux自启动
+        - 基于chkconfig服务的自启动，``/etc/init.d/`` 目录
+        - 基于systemctl服务的自启动，``/lib/systemd/system/`` 目录
+        - 基于任务计划 (crontab) 的自启动
 - 用户态进程隐藏技术
     - 基于DLL插入的进程隐藏
         - 远程线程创建技术
